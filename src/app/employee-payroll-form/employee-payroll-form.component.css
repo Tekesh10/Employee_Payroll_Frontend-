@@ -2,7 +2,7 @@
     background-color: #f7f7f7;
     padding-top: 35px;
     padding-bottom: 25px;
-    height: 540px;
+    height: 700px;
 }
 .content {
     margin-left: 300px;
@@ -34,8 +34,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     height: 50px;
+    padding-top: 15px;
+    width: 600px;
+}
+
+/* NAME DIV*/
+.name {
     padding-top: 30px;
 }
 .text {
@@ -46,11 +51,124 @@
     color: #42515F;
     opacity: 1;
 }
+.text-name {
+    padding-right: 100px;
+}
 .input {
     height: 35px;
-    width: 70%;
+    width: 450px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #BDBDBD;
     border-radius: 3px;
     opacity: 1;
+}
+
+/* PROFILE PICTURE DIV*/
+.text-picture {
+    padding-right: 30px;
+}
+.profile-picture-radio {
+    padding-right: 10px;
+}
+.radio-picture {
+    padding-right: 20px;
+}
+.radio {
+    height: 40px;
+    width: 20px;
+    background: #DEDEDE 0% 0% no-repeat padding-box;
+    border: 1px solid #B4B4B4;
+    opacity: 1;
+}
+.picture {
+    padding-left: 10px;
+}
+
+/* GENDER DIV*/
+.gender {
+    height: 30px;
+}
+.text-gender {
+    padding-right: 80px;
+}
+.gender-radio {
+    height: 20px;
+    padding-bottom: 10px;
+}
+.radio-gender {
+    padding-right: 30px;
+}
+.radio-male {
+    height: 20px;
+}
+.text-male {
+    padding-left: 5px;
+}
+.radio-female {
+    height: 20px;
+}
+.text-female {
+    padding-left: 5px;
+}
+
+/* DEPARTMENT DIV*/
+.text-department {
+    padding-right: 50px;
+}
+.checkbox {
+    padding-right: 15px;
+}
+
+/* SALARY DIV*/
+.text-salary {
+    padding-right: 95px;
+}
+.slider {
+    width: 300px;
+}
+.output {
+    padding-left: 50px;
+}
+
+/* START DATE DIV*/
+.text-date {
+    padding-right: 65px;
+}
+.dropdown {
+    width: 120px;
+    height: 40px;
+    padding-left: 10px;
+    margin-right: 20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    opacity: 1;
+}
+
+/* NOTES DIV*/
+.notes-div {
+    height: 100px;
+}
+.text-notes {
+    padding-right: 100px;
+    height: 90px;
+}
+.input-notes {
+    height: 90px;
+}
+
+/* BUTTON DIV*/
+.button {
+    height: 40px;
+    width: 120px;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    opacity: 1;
+}
+.button-cancel {
+    margin-right: 220px;
+}
+.button-reset {
+    margin-left: 20px;
 }
