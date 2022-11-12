@@ -2,151 +2,90 @@
     <div class="content">
         <div class="text-area">
             <div class="text-employee-payroll-form">Employee Payroll Form</div>
+
+            <!-- EMPLOYEE FULL NAME DIV -->
             <div class="content-area name">
                 <div><label class="text text-name" for="name">Name</label></div>
-                <div><input class="input input-name" type="text"></div>
+                <div><input class="input input-name" type="text" required [(ngModel)]="employeeForm.name"></div>
             </div>
+
+            <!-- EMPLOYEE PROFILE PICTURE DIV -->
             <div class="content-area pictures">
                 <div><label class="text text-picture" for="picture">Profile picture</label></div>
                 <div class="profile-picture-radio">
                     <label class="radio-picture">
-                        <input class="radio pic1" type="radio" name="picture" id="picture1" required>
+                        <input class="radio pic1" type="radio" name="picture" id="picture1" value="../../assets/Profile-Pictures/Ellipse -1.png" required [(ngModel)]="employeeForm.profilePicture">
                         <img class="picture" src="../../assets/Profile-Pictures/Ellipse -1.png" alt="">
                     </label>
                     <label class="radio-picture">
-                        <input class="radio pic2" type="radio" name="picture" id="picture2" required>
+                        <input class="radio pic2" type="radio" name="picture" id="picture2" value="../../assets/Profile-Pictures/Ellipse -2.png" required [(ngModel)]="employeeForm.profilePicture">
                         <img class="picture" src="../../assets/Profile-Pictures/Ellipse -2.png" alt="">
                     </label>
                     <label class="radio-picture">
-                        <input class="radio pic3" type="radio" name="picture" id="picture3" required>
+                        <input class="radio pic3" type="radio" name="picture" id="picture3" value="../../assets/Profile-Pictures/Ellipse -3.png" required [(ngModel)]="employeeForm.profilePicture">
                         <img class="picture" src="../../assets/Profile-Pictures/Ellipse -3.png" alt="">
                     </label>
                     <label class="radio-picture">
-                        <input class="radio pic4" type="radio" name="picture" id="picture4" required>
+                        <input class="radio pic4" type="radio" name="picture" id="picture4" value="../../assets/Profile-Pictures/Ellipse -4.png" required [(ngModel)]="employeeForm.profilePicture">
                         <img class="picture" src="../../assets/Profile-Pictures/Ellipse -4.png" alt="">
                     </label>
                 </div>
             </div>
+
+            <!-- EMPLOYEE GENDER DIV -->
             <div class="content-area gender">
                 <div><label class="text text-gender" for="picture">Gender</label></div>
                 <div class="gender-radio">
                     <label class="radio-gender">
-                        <input class="radio radio-male" type="radio" name="gender" id="male" required>
+                        <input class="radio radio-male" type="radio" name="gender" id="male" value="Male" required [(ngModel)]="employeeForm.gender">
                         <span class="text text-male">Male</span>
                     </label>
                     <label class="radio-gender">
-                        <input class="radio radio-female" type="radio" name="gender" id="female" required>
+                        <input class="radio radio-female" type="radio" name="gender" id="female" value="Female" required [(ngModel)]="employeeForm.gender">
                         <span class="text text-female">Female</span>
                     </label>
                 </div>
             </div>
+
+            <!-- EMPLOYEE DEPARTMENT DIV -->
             <div class="content-area department-div">
                 <div class="text text-department"><label for="department">Department</label></div>
-                <div class="department-chckbox">
-                    <label class="checkbox checkbox-hr">
-                        <input class="box" type="checkbox" name="department" id="hr">
-                        <span class="text text-hr">HR</span>
-                    </label>
-                    <label class="checkbox checkbox-sales">
-                        <input class="box" type="checkbox" name="department" id="sales">
-                        <span class="text text-sales">Sales</span>
-                    </label>
-                    <label class="checkbox checkbox-finance">
-                        <input class="box" type="checkbox" name="department" id="finance">
-                        <span class="text text-finance">Finance</span>
-                    </label>
-                    <label class="checkbox checkbox-engineer">
-                        <input class="box" type="checkbox" name="department" id="engineer">
-                        <span class="text text-engineer">Engineer</span>
-                    </label>
-                    <label class="checkbox checkbox-others">
-                        <input class="box" type="checkbox" name="department" id="others">
-                        <span class="text text-others">Others</span>
-                    </label>
+                <div class="department-checkbox">
+                    <div class="checkboxes" *ngFor="let departName of departments,let i = index ">
+                        <input class="checkbox" type="checkbox" name="department" [value]="this.employeeForm.department[i]" (change)="checkBoxChange(departName)" 
+                        (ngModel)="departName" [ngModelOptions]="{standalone: true}" ngDefaultControl> {{departName}}>
+                    </div>
                 </div>
             </div>
+
+            <!-- EMPLOYEE SALARY DIV -->
             <div class="content-area salary-div">
                 <div class="text text-salary"><label for="salary">Salary</label></div>
                 <div class="salary-slider">
-                    <input class="slider" type="range" name="salary" id="salary" min="200000" max="2000000" step="5000">
-                    <output class="output" for="salary">200000</output>
+                    <input class="slider" type="range" name="salary" id="salary" min="200000" max="2000000" step="10000" [(ngModel)]="employeeForm.salary">
+                    <output class="output" for="salary">{{this.employeeForm.salary}}</output>
                 </div>
             </div>
+
+            <!-- EMPLOYEE START DATE DIV -->
             <div class="content-area date-div">
-                <div class="text text-date"><label for="date">Start Date</label></div>
+                <div class="text text-date"><label for="starDate">Start Date</label></div>
                 <div class="dropdowns">
-                <label>
-                    <select class="dropdown dropdown-day" name="day" id="day">
-                        <option value="">Day</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                        <option value="26">26</option>
-                        <option value="27">27</option>
-                        <option value="28">28</option>
-                        <option value="29">29</option>
-                        <option value="30">30</option>
-                        <option value="31">31</option>
-                    </select>
-                </label>
-                <label>
-                    <select class="dropdown dropdown-month" name="month" id="month">
-                        <option value="">Month</option>
-                        <option value="Jan">January</option>
-                        <option value="Feb">Febuary</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="Aug">August</option>
-                        <option value="Sept">September</option>
-                        <option value="Oct">October</option>
-                        <option value="Nov">November</option>
-                        <option value="Dec">December</option>
-                    </select>
-                </label>
-                <label>
-                    <select class="dropdown dropdown-year" name="Year" id="year">
-                        <option value="">Year</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                    </select>
-                </label>
+                    <input class="dropdown dropdown-day" type="date" name="startDate" [(ngModel)]="employeeForm.starDate">
+                </div>
             </div>
-            </div>
+
+            <!-- EMPLOYEE NOTES DIV -->
             <div class="content-area notes-div">
                 <div class="text text-notes"><label for="notes">Notes</label></div>
-                <div><input class="input input-notes" type="text" name="notes" id="notes"></div>
+                <textarea class="text-area-notes" type="text" name="notes" id="notes" cols="65" rows="5" [(ngModel)]="employeeForm.note"></textarea>
             </div>
+
+            <!-- EMPLOYEE CANCEL - SUBMIT - RESET DIV -->
             <div class="content-area button-div">
-                <a routerLink=""><button class="button button-cancel">Cancel</button></a>
-                <div>
-                    <button class="button button-submit" type="submit">Submit</button>
+                <a routerLink=""><button  class="button button-cancel">Cancel</button></a>
+                <div class="submit-reset">
+                    <button class="button button-submit" type="submit" (click)="onSubmit()">Submit</button>
                     <button class="button button-reset" type="reset">Reset</button>
                 </div>
             </div>

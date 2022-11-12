@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeeForm } from './employee-form';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Employee_Payroll_Frontend';
+  employeeModel = new EmployeeForm("","","",[],200000,new Date,"");
 }

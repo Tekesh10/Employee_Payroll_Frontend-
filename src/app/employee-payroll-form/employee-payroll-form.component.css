@@ -1,7 +1,7 @@
 .form {
     background-color: #f7f7f7;
     padding-top: 35px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     height: 700px;
 }
 .content {
@@ -14,9 +14,9 @@
     opacity: 1;
 }
 .text-area {
-    padding-top: 42px;
-    padding-left: 149px;
-    padding-right: 149px;
+    padding-top: 32px;
+    padding-left: 120px;
+    padding-right: 120px;
     padding-bottom: 42px;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@
 }
 .input {
     height: 35px;
-    width: 450px;
+    width: 480px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #BDBDBD;
     border-radius: 3px;
@@ -89,7 +89,7 @@
     height: 30px;
 }
 .text-gender {
-    padding-right: 80px;
+    padding-right: 84px;
 }
 .gender-radio {
     height: 20px;
@@ -113,13 +113,23 @@
 
 /* DEPARTMENT DIV*/
 .text-department {
-    padding-right: 50px;
+    padding-right: 48px;
+}
+.department-checkbox {
+    display: flex;
+    height: 20px;
+}
+.checkboxes {
+    padding-right: 10px;
 }
 .checkbox {
     padding-right: 15px;
 }
 
 /* SALARY DIV*/
+.salary-div {
+    padding-top: 0px;
+}
 .text-salary {
     padding-right: 95px;
 }
@@ -131,8 +141,11 @@
 }
 
 /* START DATE DIV*/
+.date-div {
+    padding-top: 0px;
+}
 .text-date {
-    padding-right: 65px;
+    padding-right: 68px;
 }
 .dropdown {
     width: 120px;
@@ -148,16 +161,24 @@
 /* NOTES DIV*/
 .notes-div {
     height: 100px;
+    width: 650px;
 }
 .text-notes {
     padding-right: 100px;
     height: 90px;
 }
-.input-notes {
-    height: 90px;
+.text-area-notes {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    opacity: 1;
 }
 
 /* BUTTON DIV*/
+.button-div {
+    width: 650px;
+    justify-content: space-between;
+}
 .button {
     height: 40px;
     width: 120px;
@@ -167,7 +188,7 @@
     opacity: 1;
 }
 .button-cancel {
-    margin-right: 220px;
+    width: 120px;
 }
 .button-reset {
     margin-left: 20px;
