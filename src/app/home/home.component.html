@@ -3,14 +3,35 @@
         <div class="text-employee-details">Employee Details</div>
         <a routerLink="employee-payroll-form"><button class="add-employee"><span class="text text-add-user">+ Add User</span></button></a>
     </div>
-    <div class="table">
-        <div class="table-text">
-            <span class="text name">NAME</span>
-            <span class="text gender">GENDER</span>
-            <span class="text department">DEPARTMENT</span>
-            <span class="text salary">SALARY</span>
-            <span class="text date">START DATE</span>
-            <span class="text actions">ACTIONS</span>
+    <table class="table">
+        <div class="table-head">
+            <tr class="head-text">
+                <th></th>
+                <th class="text name">NAME</th>
+                <th class="text gender">GENDER</th>
+                <th class="text department">DEPARTMENT</th>
+                <th class="text salary">SALARY</th>
+                <th class="text date">START DATE</th>
+                <th class="text actions">ACTIONS</th>
+            </tr>
         </div>
-    </div>
+        <div>
+            <tr class="table-data" *ngFor="let employee of employeeList">
+                <td class="picture">
+                    <img src="{{employee.profilePicture}}" alt="">
+                </td>
+                <td class="text-data employee-name">{{employee.name}}</td>
+                <td class="text-data employee-gender">{{employee.gender}}</td>
+                <td class="text-data employee-department">
+                    <div class="deptment-label" *ngFor="let department of employee.department">{{department}}</div>
+                </td>
+                <td class="text-data employee-salary">{{employee.salary | currency:'INR'}}</td>
+                <td class="text-data employee-date">{{employee.startDate | date: 'dd MMM yyyy'}}</td>
+                <td class="icons">
+                    <img class="icon-delete" src="../../assets/delete-black-18dp.svg" id={{employee.employeeId}} alt="delete icon" (click)="delete(employee.employeeId)">
+                    <img class="icon-edit" src="../../assets/create-black-18dp.svg" alt="edit icon" (click)="update(employee.employeeId, employee)" id={{employee.employeeId}}>
+                </td>
+            </tr>
+        </div>
+    </table>
 </div>

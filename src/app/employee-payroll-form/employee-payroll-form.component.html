@@ -62,16 +62,16 @@
             <div class="content-area salary-div">
                 <div class="text text-salary"><label for="salary">Salary</label></div>
                 <div class="salary-slider">
-                    <input class="slider" type="range" name="salary" id="salary" min="200000" max="2000000" step="10000" [(ngModel)]="employeeForm.salary">
+                    <input class="slider" type="range" name="salary" id="salary" min="200000" max="2000000" step="50000" [(ngModel)]="employeeForm.salary">
                     <output class="output" for="salary">{{this.employeeForm.salary}}</output>
                 </div>
             </div>
 
             <!-- EMPLOYEE START DATE DIV -->
             <div class="content-area date-div">
-                <div class="text text-date"><label for="starDate">Start Date</label></div>
+                <div class="text text-date"><label for="startDate">Start Date</label></div>
                 <div class="dropdowns">
-                    <input class="dropdown dropdown-day" type="date" name="startDate" [(ngModel)]="employeeForm.starDate">
+                    <input class="dropdown dropdown-day" type="date" name="startDate" [(ngModel)]="employeeForm.startDate">
                 </div>
             </div>
 

@@ -7,6 +7,6 @@ import { EmployeeForm } from './employee-form';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Employee_Payroll_Frontend';
+  title = 'Employee Payroll';
   employeeModel = new EmployeeForm("","","",[],200000,new Date,"");
 }

@@ -12,7 +12,7 @@ export class EmployeePayrollFormComponent implements OnInit {
 
   constructor(private router: Router, private service: EmployeePayrollService, private route: ActivatedRoute) {}
 
-  employeeForm: EmployeePayrollModule= new EmployeePayrollModule("","","",[],200000,new Date,"")
+  public employeeForm: EmployeePayrollModule= new EmployeePayrollModule("","","",[],200000,new Date,"")
   departments: any= ["HR", "Sales", "Engineer", "Finance", "Others"];
   deptName: any;
   emps:any = "";
@@ -36,8 +36,8 @@ export class EmployeePayrollFormComponent implements OnInit {
   onSubmit() {
     console.log(this.employeeForm);
     this.employeeForm.department=this.tempArr
-    this.service.insertEmployee(this.employeeForm).subscribe((data: any)=> {
-      this.router.navigate([""])
+    this.service.addEmployee(this.employeeForm).subscribe((data: any)=> {
+      this.router.navigate([''])
     })
   }
 
