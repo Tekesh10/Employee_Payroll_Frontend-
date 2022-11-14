@@ -1,12 +1,20 @@
 export class EmployeeForm {
 
-    public name: string = "";
-    public profilePicture:string = "";
-    public gender:string = "";
-    public department:Array<any> = [];
-    public salary: number= 0;
-    public startDate: Date= new Date;
-    public note:string = "";
+    name: String = "";
+    profilePicture: String = "";
+    gender: String = "";
+    department:Array<any> = [];
+    salary: Number= 0;
+    startDate: Date;
+    note: String = "";
 
-    constructor (name : String, profilePicture: String, gender: String, department: Array<any>, salary: Number, starDate: Date, note: String) {}
+    constructor (name : String, profilePicture: String, gender: String, department: Array<any>, salary: Number, startDate: Date, note: String) {
+        this.name= name;
+        this.profilePicture= profilePicture;
+        this.gender= gender;
+        this.department= department;
+        this.salary= salary;
+        this.startDate= startDate;
+        this.note= note;
+    }
 }

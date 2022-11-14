@@ -6,6 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class EmployeePayrollService {
 
+  id: Number= 0;
+  employee: any;
+
+  update(id: Number, employee: any) {
+    this.id= id;
+    this.employee= employee;
+  }
+
   constructor(private http: HttpClient) { }
 
   addEmployee(employee: any) {
@@ -23,4 +31,5 @@ export class EmployeePayrollService {
   updateById(id: Number, employee: any) {
     return this.http.put("http://localhost:8080/employeePayrollService/update/"+id, employee)
   }
+
 }

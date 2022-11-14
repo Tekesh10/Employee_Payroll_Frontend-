@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmployeeForm } from '../employee-form';
 import { EmployeePayrollService } from '../employee-payroll.service';
-import { EmployeePayrollModule } from '../employee-payroll/employee-payroll.module';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +12,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private service: EmployeePayrollService, private router: Router) { }
 
+  employeeForm: EmployeeForm= new EmployeeForm("","","",[],200000,new Date,"")
+
   employeeList: any;
-  id: Number= 0;
   count: Number= 0;
+  id: Number= 0;
 
   ngOnInit(): void {
     this.service.getAllEmployee().subscribe((data:any)=> {
@@ -31,9 +33,9 @@ export class HomeComponent implements OnInit {
     })
   }
   
-  update(employeeId: Number, employee: EmployeePayrollModule) {
+  update(employeeId: Number, employee: EmployeeForm) {
     console.log(employeeId, employee);
-    this.service.updateById(employeeId, employee);
+    this.service.update(employeeId, employee);
     this.router.navigate(['employee-payroll-form']);
   }
 

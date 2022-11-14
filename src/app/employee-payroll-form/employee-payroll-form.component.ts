@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EmployeeForm } from '../employee-form';
 import { EmployeePayrollService } from '../employee-payroll.service';
-import { EmployeePayrollModule } from '../employee-payroll/employee-payroll.module';
 
 @Component({
   selector: 'app-employee-payroll-form',
@@ -12,19 +12,20 @@ export class EmployeePayrollFormComponent implements OnInit {
 
   constructor(private router: Router, private service: EmployeePayrollService, private route: ActivatedRoute) {}
 
-  public employeeForm: EmployeePayrollModule= new EmployeePayrollModule("","","",[],200000,new Date,"")
+  employeeForm: EmployeeForm= new EmployeeForm("","","",[],200000,new Date,"")
+  id: Number= 0;
   departments: any= ["HR", "Sales", "Engineer", "Finance", "Others"];
-  deptName: any;
-  emps:any = "";
-  allEmp : Array<any>=[];  
+  departmentName: any;
+  emps: any= "";
+  allEmp: Array<any>=[];  
   tempArr : Array<any> = [];
 
-  checkBoxChange(dptname:any){
-    if(!this.tempArr.includes(dptname)){
-      this.tempArr.push(dptname);
+  checkBoxChange(departmentName:any){
+    if(!this.tempArr.includes(departmentName)){
+      this.tempArr.push(departmentName);
     }
     else{
-      const index = this.tempArr.indexOf(dptname);
+      const index = this.tempArr.indexOf(departmentName);
       if (index > -1) {
         this.tempArr.splice(index, 1);
       }
@@ -32,13 +33,25 @@ export class EmployeePayrollFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.service.id !=0) {
+      this.employeeForm= this.service.employee;
+    }
   }
   onSubmit() {
-    console.log(this.employeeForm);
-    this.employeeForm.department=this.tempArr
-    this.service.addEmployee(this.employeeForm).subscribe((data: any)=> {
-      this.router.navigate([''])
-    })
+    if (this.service.id !=0) {
+      this.employeeForm.department=this.tempArr;
+      this.service.updateById(this.service.id, this.service.employee).subscribe((data: any)=> {
+        console.log(data);
+        this.router.navigate(['']);
+        this.service.update(0,null);
+      })
+    } else {
+      console.log(this.employeeForm);
+      this.employeeForm.department=this.tempArr;
+      this.service.addEmployee(this.employeeForm).subscribe((data: any)=> {
+        this.router.navigate(['']);
+      })
+    }
   }
 
 }

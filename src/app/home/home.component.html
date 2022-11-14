@@ -25,7 +25,7 @@
                 <td class="text-data employee-department">
                     <div class="deptment-label" *ngFor="let department of employee.department">{{department}}</div>
                 </td>
-                <td class="text-data employee-salary">{{employee.salary | currency:'INR'}}</td>
+                <td class="text-data employee-salary">{{employee.salary | currency: 'INR'}}</td>
                 <td class="text-data employee-date">{{employee.startDate | date: 'dd MMM yyyy'}}</td>
                 <td class="icons">
                     <img class="icon-delete" src="../../assets/delete-black-18dp.svg" id={{employee.employeeId}} alt="delete icon" (click)="delete(employee.employeeId)">

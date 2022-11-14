@@ -60,21 +60,22 @@
 }
 .name {
     padding-left: 100px;
+    width: 340px;
 }
 .gender {
-    padding-left: 300px;
+    width: 120px;
 }
 .department {
-    padding-left: 100px;
+    width: 280px;
 }
 .salary {
-    padding-left: 150px;
+    width: 140px;
 }
 .date {
-    padding-left: 80px;
+    width: 110px;
 }
 .actions {
-    padding-left: 50px;
+    width: 100px;
 }
 .table-data {
     width: 1220px;
@@ -96,14 +97,13 @@
     opacity: 1;
 }
 .employee-name {
-    padding-right: 230px;
+    width: 340px;
 }
 .employee-gender {
-    padding-right: 110px;
+    width: 120px;
 }
 .employee-department {
-    padding-right: 140px;
-    width: 100px;
+    width: 280px;
     display: flex;
 }
 .deptment-label {
@@ -114,10 +114,10 @@
     height: 22px;
 }
 .employee-salary {
-    padding-right: 40px;
+    width: 140px;
 }
 .employee-date {
-    padding-right: 40px;
+    width: 110px;
 }
 .icons {
     width: 110px;
